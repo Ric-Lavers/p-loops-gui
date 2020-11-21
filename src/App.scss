@@ -25,7 +25,17 @@ body {
   // div {
   //   border: 1px dashed black;
   // }
+  .field  {
+    td:first-of-type {
+      text-align: right;
+    }
+  }
   .set {
+    .form-container{
+      display: flex;
+      justify-content: space-evenly;
+     
+    }
   }
   .main {
     padding: 8px;

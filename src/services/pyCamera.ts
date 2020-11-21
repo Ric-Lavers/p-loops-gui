@@ -17,6 +17,15 @@ export const startCam = () => {
 export const stopCam = () => {
   return Axios.get("stop")
 }
+export const startRecording = (filename: string) => {
+  let data = {}
+  if (filename) data = { filename }
+  return Axios.post("start_recording", data)
+}
+export const stopRecording = () => {
+  return Axios.get("stop_recording")
+}
+
 export const getEffects = (): Promise<{
   IMAGE_EFFECTS: string[]
   current: string
@@ -25,4 +34,10 @@ export const getEffects = (): Promise<{
 }
 export const changeEffect = (effect: string): Promise<{ effect: string }> => {
   return Axios.post("/effect", { effect })
+}
+export const setWindow = (preview_window: { x: number, y: number, width: number, height: number }): Promise<{ success: boolean }> => {
+  return Axios.post("/set_window", preview_window)
+}
+export const setResolution = (res: { width: number, height: number }): Promise<{ success: boolean }> => {
+  return Axios.post("/set_res", res)
 }

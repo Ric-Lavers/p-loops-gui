@@ -15,7 +15,6 @@ ReactDOM.render(
   <React.StrictMode>
     <>
       <App />
-      <iframe src="https://statecharts.io/inspect" title="x" data-xstate />
     </>
   </React.StrictMode>,
   document.getElementById("root"),
